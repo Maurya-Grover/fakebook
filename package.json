@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  },
+  "name": "naklifacebook",
+  "description": "essentially a barebones fake social media app like facebook",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "watch": "nodemon app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maurya-Grover/Fakebook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maurya-Grover/Fakebook/issues"
+  },
+  "homepage": "https://github.com/Maurya-Grover/Fakebook#readme"
+}
