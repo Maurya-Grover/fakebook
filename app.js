@@ -6,7 +6,10 @@ const router = require('./router');
 
 const app = express();
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(express.static('public'));
+
 // first argument the configuration
 // second argument is the name of our folder
 app.set('views', 'views');
@@ -14,4 +17,4 @@ app.set('view engine', 'ejs');
 
 app.use('/', router);
 
-app.listen(process.env.PORT || 6969);
+module.exports = app;
