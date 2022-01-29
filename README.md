@@ -19,6 +19,6 @@ Features yet to be implemented -
 
 Technologies used -
 
-- The webapp is primarily built using NodeJS
+- The webapp is primarily built using NodeJS and Express
 - Used EJS as the templating engine
 - Libraries used - express, mongodb, express-session, bcrypt(for hashing passwords), validator(to validate emails)
