@@ -29,9 +29,19 @@ Post.prototype.create = function () {
 		this.validate();
 		if (!this.errors.length) {
 			let query = {
-				username: req.se,
+				username: req.session.username,
 			};
-			postsCollection.insertOne(query);
+			postsCollection
+				.insertOne(this.data)
+				.then(() => {
+					resolve();
+				})
+				.catch(() => {
+					this.errors.push(
+						"Please try again later. We're facing some issues with the server."
+					);
+					reject(this.errors);
+				});
 		} else {
 			reject(this.errors);
 		}
