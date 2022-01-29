@@ -3,20 +3,21 @@
 // 2) it returns whatever the file exports
 const express = require('express');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
+const flash = require('connect-flash');
 const router = require('./router');
 
 const app = express();
 
 let sessionOptions = session({
 	secret: 'random text',
+	store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRING }),
 	resave: false,
 	saveUninitialized: false,
-	cookie: {
-		maxAge: 1000 * 60 * 60 * 24, // specified in miliseconds. this value implies one day
-		httpOnly: true,
-	},
+	cookie: { maxAge: 1000 * 60 * 60 * 24, httpOnly: true },
 });
 app.use(sessionOptions);
+app.use(flash());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static('public'));
