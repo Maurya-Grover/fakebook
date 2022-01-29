@@ -12,7 +12,7 @@ router.post('/logout', userController.logout);
 // Post routes
 router.get(
 	'/create-post',
-	userController.mustBeLoggedIn,
+	userController.mustBeLoggedIn, // this will help protect other routes so that only logged in users can access
 	postController.viewCreateScreen
 );
 module.exports = router;

@@ -72,10 +72,7 @@ exports.register = (req, res) => {
 
 exports.home = (req, res) => {
 	if (req.session.user) {
-		res.render('home-dashboard', {
-			username: req.session.user.username,
-			avatar: req.session.user.avatar,
-		});
+		res.render('home-dashboard');
 	} else {
 		// passing flash errors using flash function will also delete the errors from the session
 		// or else I could've simply accessed using req.session.flash.errors
